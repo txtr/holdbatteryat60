@@ -18,13 +18,12 @@ class Battery:
             this_battery["battery_id"], remainder = remainder.split("\t", 1)
             this_battery["battery_percentage"], remainder = remainder.split("; ", 1)
             this_battery["battery_status"], remainder = remainder.split("; ", 1)
-            this_battery["battery_time_remaining"], remainder = remainder.split("remaining ", 1)
-            this_battery["battery_present"], remainder = remainder.split("present: ", 1)[-1], None
+            this_battery["battery_time_remaining"], this_battery["battery_present"] = remainder.split("present: ", 1)
 
             this_battery["battery_id"] = int(this_battery["battery_id"].split("(id=", 1)[-1].split(")", 1)[0])
             this_battery["battery_percentage"] = int(this_battery["battery_percentage"].split("%", 1)[0])
             this_battery["battery_present"] = True if this_battery["battery_present"] == "true" else False
-
+            print(this_battery)
             self.batteries.append(this_battery)
 
 
