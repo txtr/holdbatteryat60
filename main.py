@@ -2,7 +2,7 @@ import subprocess
 import asyncio
 import kasa
 
-IP_STRING = "192.168.1.97"
+IP_STRING = "192.168.1.XXX"
 SLEEP_BETWEEN_CYCLES = 30  # in seconds
 
 
